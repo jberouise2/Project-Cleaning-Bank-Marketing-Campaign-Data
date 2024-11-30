@@ -44,4 +44,7 @@ They have supplied you with a csv file called `"bank_marketing.csv"`, which you 
 | `cons_price_idx` | `float` | Consumer price index (monthly indicator) | N/A |
 | `euribor_three_months` | `float` | Euro Interbank Offered Rate (euribor) three-month rate (daily indicator) | N/A |  
 
+## `Solution`
+[notebook_solution](https://github.com/jberouise2/Project-Cleaning-Bank-Marketing-Campaign-Data/blob/a3b8509a2ea33da5f175eecf011a3dba7adf90cd/notebook.ipynb)
+
 
