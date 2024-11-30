@@ -45,48 +45,48 @@ They have supplied you with a csv file called `"bank_marketing.csv"`, which you 
 | `euribor_three_months` | `float` | Euro Interbank Offered Rate (euribor) three-month rate (daily indicator) | N/A |  
 
  ```{python}
-    import pandas as pd
-    import numpy as np
+ import pandas as pd
+import numpy as np
 
-    # Start coding here...
-    # Importing and Converting csv to Pandas Data Frame
-    df = pd.read_csv("bank_marketing.csv",
-                    dtype={'credit_default':bool, 'mortgage':bool, 'previous_outcome':bool, 'campaign_outcome':bool},
-                    true_values=['yes', 'success'],
-                    false_values=['no', 'unknown', 'failure', 'nonexistent'])
-    
-    #extracting and assigning columns from df to new data frame client, campaign, economics
-    client = df[['client_id', 'age', 'job', 'marital', 'education', 'credit_default', 'mortgage']]
-    campaign = df[['client_id', 'number_contacts', 'contact_duration', 'previous_campaign_contacts', 'previous_outcome', 'campaign_outcome']]
-    economics = df[['client_id', 'cons_price_idx', 'euribor_three_months']]
-    
-    #Cleaning Client Data Frame
-    client.loc[:,'job'] = client.loc[:,'job'].str.replace('.','_')
-    client.loc[:,'education'] = client.loc[:,'education'].str.replace('.', '_')
-    client.loc[:,'education'] = client.loc[:,'education'].replace('unknown', np.NaN)
-    
-    #converting credit_default and martgage column to boolean
-    #for col_name in ['credit_default', 'mortgage']:
-    #    client.loc[:,col_name] = client[col_name].replace({'yes': 1, 'no': 0, 'unknown': 0})
-    #    client.loc[:,col_name] = client[col_name].astype(bool)
-    
-    #converting previous_outcome and campaign_outcome column to boolean
-    #for col_name in ['previous_outcome','campaign_outcome']:
-    #    campaign.loc[:,col_name] = campaign[col_name].replace({'success': 1, 'yes': 1, 'failure': 0, 'nonexistent': 0, 'no': 0, 'unknown': 0})
-    #    campaign.loc[:,col_name] = campaign[col_name].astype(bool)
-    
-    #Adding last_contact_date column and data on campagaign Data Frame
-    campaign['year'] = '2022'
-    campaign['day'] = df['day'].astype(str)
-    
-    campaign['last_contact_date_text'] = campaign['year'] + '-' + df['month'] + '-' + campaign['day']
-    
-    campaign['last_contact_date'] = pd.to_datetime(campaign['last_contact_date_text'], format='%Y-%b-%d')
-    #dropping uneccessary column
-    campaign = campaign.drop(['year', 'day', 'last_contact_date_text'], axis=1)
-    
-    client.to_csv('client.csv', index= False)
-    campaign.to_csv('campaign.csv', index= False)
-    economics.to_csv('economics.csv', index= False)
+# Start coding here...
+# Importing and Converting csv to Pandas Data Frame
+df = pd.read_csv("bank_marketing.csv",
+                dtype={'credit_default':bool, 'mortgage':bool, 'previous_outcome':bool, 'campaign_outcome':bool},
+                true_values=['yes', 'success'],
+                false_values=['no', 'unknown', 'failure', 'nonexistent'])
+
+#extracting and assigning columns from df to new data frame client, campaign, economics
+client = df[['client_id', 'age', 'job', 'marital', 'education', 'credit_default', 'mortgage']]
+campaign = df[['client_id', 'number_contacts', 'contact_duration', 'previous_campaign_contacts', 'previous_outcome', 'campaign_outcome']]
+economics = df[['client_id', 'cons_price_idx', 'euribor_three_months']]
+
+#Cleaning Client Data Frame
+client.loc[:,'job'] = client.loc[:,'job'].str.replace('.','_')
+client.loc[:,'education'] = client.loc[:,'education'].str.replace('.', '_')
+client.loc[:,'education'] = client.loc[:,'education'].replace('unknown', np.NaN)
+
+#converting credit_default and martgage column to boolean
+#for col_name in ['credit_default', 'mortgage']:
+#    client.loc[:,col_name] = client[col_name].replace({'yes': 1, 'no': 0, 'unknown': 0})
+#    client.loc[:,col_name] = client[col_name].astype(bool)
+
+#converting previous_outcome and campaign_outcome column to boolean
+#for col_name in ['previous_outcome','campaign_outcome']:
+#    campaign.loc[:,col_name] = campaign[col_name].replace({'success': 1, 'yes': 1, 'failure': 0, 'nonexistent': 0, 'no': 0, 'unknown': 0})
+#    campaign.loc[:,col_name] = campaign[col_name].astype(bool)
+
+#Adding last_contact_date column and data on campagaign Data Frame
+campaign['year'] = '2022'
+campaign['day'] = df['day'].astype(str)
+
+campaign['last_contact_date_text'] = campaign['year'] + '-' + df['month'] + '-' + campaign['day']
+
+campaign['last_contact_date'] = pd.to_datetime(campaign['last_contact_date_text'], format='%Y-%b-%d')
+#dropping uneccessary column
+campaign = campaign.drop(['year', 'day', 'last_contact_date_text'], axis=1)
+
+client.to_csv('client.csv', index= False)
+campaign.to_csv('campaign.csv', index= False)
+economics.to_csv('economics.csv', index= False)
 ```
 
