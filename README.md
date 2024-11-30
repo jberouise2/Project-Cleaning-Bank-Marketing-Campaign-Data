@@ -1,4 +1,4 @@
-######Project Cleaning Bank Marketing Campaign Data
+# Project Cleaning Bank Marketing Campaign Data
 
 ![Piggy bank](piggy_bank.jpg)
 
