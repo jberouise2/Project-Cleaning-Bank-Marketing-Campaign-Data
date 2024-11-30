@@ -51,6 +51,6 @@ Subset, clean, and reformat the bank_marketing.csv dataset to create and store t
 | `euribor_three_months` | `float` | Euro Interbank Offered Rate (euribor) three-month rate (daily indicator) | N/A |  
 
 ## `Solution`
-[notebook_solution](https://github.com/jberouise2/Project-Cleaning-Bank-Marketing-Campaign-Data/blob/a3b8509a2ea33da5f175eecf011a3dba7adf90cd/notebook.ipynb)
+[python_solution](https://github.com/jberouise2/Project-Cleaning-Bank-Marketing-Campaign-Data/blob/a3b8509a2ea33da5f175eecf011a3dba7adf90cd/notebook.ipynb)
 
 
