@@ -8,6 +8,12 @@ You have been asked to work with a bank to clean the data they collected as part
 
 They have supplied you with a csv file called `"bank_marketing.csv"`, which you will need to clean, reformat, and split the data, saving three final csv files. Specifically, the three files should have the names and contents as outlined below:
 
+## `Task`
+Subset, clean, and reformat the bank_marketing.csv dataset to create and store three new files based on the requirements detailed in the notebook.
+
+-Split and tidy bank_marketing.csv, storing as three DataFrames called client, campaign, and economics, each containing the columns outlined in the notebook and formatted to the data types listed.
+-Save the three DataFrames to csv files, without an index, as client.csv, campaign.csv, and economics.csv respectively.
+
 ## `client.csv`
 
 | column | data type | description | cleaning requirements |
