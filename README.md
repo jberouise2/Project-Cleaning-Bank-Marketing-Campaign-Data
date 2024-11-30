@@ -44,6 +44,7 @@ They have supplied you with a csv file called `"bank_marketing.csv"`, which you 
 | `cons_price_idx` | `float` | Consumer price index (monthly indicator) | N/A |
 | `euribor_three_months` | `float` | Euro Interbank Offered Rate (euribor) three-month rate (daily indicator) | N/A |  
 
+ ```{python}
     import pandas as pd
     import numpy as np
 
@@ -87,4 +88,5 @@ They have supplied you with a csv file called `"bank_marketing.csv"`, which you 
     client.to_csv('client.csv', index= False)
     campaign.to_csv('campaign.csv', index= False)
     economics.to_csv('economics.csv', index= False)
+```
 
